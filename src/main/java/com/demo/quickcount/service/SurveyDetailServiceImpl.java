@@ -51,6 +51,7 @@ public class SurveyDetailServiceImpl implements SurveyDetailService{
             for (SurveyDataRequest surveyDataEntity : request.getSurveyData()) {
                 SurveyDataEntity item = new SurveyDataEntity();
                 BeanUtils.copyProperties(surveyDataEntity, item);
+                item.setSurveyDetailId(result.getId());
                 item.setId(UUID.randomUUID().toString());
 
                 result.addSurveyData(item);
